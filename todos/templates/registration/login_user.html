@@ -1,0 +1,24 @@
+{% extends 'baselg.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Login</h2>
+    <form method="post" action="{% url 'login_user' %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+        </div>
+        
+        <button class="btn btn-primary submit-button" type="submit">Entrar</button>
+    </form>
+</div>
+{% endblock %}
