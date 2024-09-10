@@ -35,7 +35,7 @@ Antes de iniciar o projeto, certifique-se de ter os seguintes requisitos instala
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/2dbueno/todo-list
+    git clone https://github.com/2dbueno/Todo-List-App
     ```
 
 2. Navegue até o diretório do projeto:
@@ -70,18 +70,6 @@ Antes de iniciar o projeto, certifique-se de ter os seguintes requisitos instala
     ```
 
 7. Acesse a aplicação no seu navegador através de `http://127.0.0.1:8000`.
-
-## Contribuição 🤝
-
-Sinta-se à vontade para contribuir com o projeto! Para contribuir, siga estas etapas:
-
-1. Faça um fork do repositório.
-2. Crie uma branch para a sua funcionalidade (`git checkout -b feature/nova-funcionalidade`).
-3. Faça commit das suas alterações (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Faça push para a branch (`git push origin feature/nova-funcionalidade`).
-5. Abra um pull request no GitHub.
-
-## Licença 📜
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
