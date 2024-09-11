@@ -16,7 +16,7 @@
             <li>
                 <form action="{% url 'logout' %}" method="post" class="d-flex">
                     {% csrf_token %}
-                    <button type="submit" class="logout-button">Logout</button>
+                    <button type="button" class="logout-button">Logout</button>
                 </form>
             </li>
             {% else %}
@@ -39,5 +39,17 @@
         </section>
     </div>
     
+    <!-- Modal de Confirmação de saída -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Você tem certeza?</h2>
+            <p>Deseja realmente sair?</p>
+            <button id="confirmBtn">Sim</button>
+            <button id="cancelBtn">Não</button>
+        </div>
+    </div>
+
+    <!-- Inclusão do JavaScript -->
+    <script src="{% static 'js/home.js' %}"></script>
 </body>
 </html>

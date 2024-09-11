@@ -86,9 +86,12 @@ nav ul li a:hover {
   border: none;
   border-radius: 10px;
   padding: 5px 10px;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  top: 1.6rem;
+  position: absolute;
+  right: 3rem;
 }
 
 /**
@@ -158,4 +161,53 @@ nav ul li a:hover {
   */
 .task-item button:hover {
   background-color: #121212;
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Botões do modal */
+.modal-content button {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #121212;
+}
+
+.modal-content #cancelBtn {
+  background-color: #e2232c;
+}
+
+.modal-content #cancelBtn:hover {
+  background-color: #f3252f;
 }

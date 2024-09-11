@@ -1,94 +1,94 @@
 # Todo List App 📋
 
-## Descrição 📖
+## Description 📖
 
-Este é um aplicativo de lista de tarefas desenvolvido com **Python** e **Django**. Ele utiliza **SQLite3** como banco de dados, e suas interfaces são criadas com **HTML**, **CSS**, e **Bootstrap** para garantir uma experiência de usuário agradável e responsiva.
+This is a task list application developed with **Python** and **Django**. It uses **SQLite3** as the database, and its interfaces are created with **HTML**, **CSS**, and **Bootstrap** to ensure a pleasant and responsive user experience.
 
-O objetivo principal deste projeto é desenvolver e aprimorar minhas habilidades em **back-end** e **front-end** utilizando as tecnologias mencionadas. 
+The main goal of this project is to develop and enhance my skills in **back-end** and **front-end** using the mentioned technologies.
 
-## Tecnologias Utilizadas 🛠️
+## Technologies Used 🛠️
 
-- **Python**: Linguagem de programação usada para o desenvolvimento do projeto.
-- **Django**: Framework web em Python para criação da aplicação.
-- **SQLite3**: Banco de dados utilizado para armazenamento dos dados.
-- **HTML**: Linguagem de marcação usada para criar a estrutura das páginas.
-- **CSS**: Linguagem de estilo usada para estilizar a aplicação.
-- **Bootstrap**: Framework CSS utilizado para criar uma interface moderna e responsiva.
+- **Python**: Programming language used for the development of the project.
+- **Django**: Python web framework for creating the application.
+- **SQLite3**: Database used for data storage.
+- **HTML**: Markup language used to create the structure of the pages.
+- **CSS**: Styling language used to style the application.
+- **Bootstrap**: CSS framework used to create a modern and responsive interface.
 
-## Funcionalidades 🚀
+## Features 🚀
 
-- **Cadastro de Tarefas**: Adicione novas tarefas à sua lista.
-- **Edição e Exclusão de Tarefas**: Modifique ou remova tarefas existentes.
-- **Marcação de Conclusão**: Marque tarefas como concluídas.
-- **Interface Responsiva**: Design adaptável a diferentes tamanhos de tela utilizando Bootstrap.
+- **Task Creation**: Add new tasks to your list.
+- **Task Editing and Deletion**: Modify or remove existing tasks.
+- **Completion Marking**: Mark tasks as completed.
+- **Responsive Interface**: Design adaptable to different screen sizes using Bootstrap.
 
-## Requisitos 📦
+## Requirements 📦
 
-Antes de iniciar o projeto, certifique-se de ter os seguintes requisitos instalados:
+Before starting the project, ensure you have the following requirements installed:
 
 - Python 3.x
 - Django
 - SQLite3
 
-## Instalação 🚧
+## Installation 🚧
 
-1. Clone o repositório:
+1. Clone the repository:
 
     ```bash
-    git clone https://github.com/2dbueno/todo-list
+    git clone https://github.com/2dbueno/Todo-List-App
     ```
 
-2. Navegue até o diretório do projeto:
+2. Navigate to the project directory:
 
     ```bash
     cd todo-list-app
     ```
 
-3. Crie um ambiente virtual e ative-o:
+3. Create and activate a virtual environment:
 
     ```bash
     python -m venv venv
-    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-4. Instale as dependências:
+4. Install the dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-5. Crie o banco de dados e aplique as migrações:
+5. Create the database and apply migrations:
 
     ```bash
     python manage.py migrate
     ```
 
-6. Inicie o servidor de desenvolvimento:
+6. Start the development server:
 
     ```bash
     python manage.py runserver
     ```
 
-7. Acesse a aplicação no seu navegador através de `http://127.0.0.1:8000`.
+7. Access the application in your browser at `http://127.0.0.1:8000`.
 
-## Contribuição 🤝
+## Contribution 🤝
 
-Sinta-se à vontade para contribuir com o projeto! Para contribuir, siga estas etapas:
+Feel free to contribute to the project! To contribute, follow these steps:
 
-1. Faça um fork do repositório.
-2. Crie uma branch para a sua funcionalidade (`git checkout -b feature/nova-funcionalidade`).
-3. Faça commit das suas alterações (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Faça push para a branch (`git push origin feature/nova-funcionalidade`).
-5. Abra um pull request no GitHub.
+1. Fork the repository.
+2. Create a branch for your feature (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a pull request on GitHub.
 
-## Licença 📜
+## License 📜
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
-## Autor 👤
+## Author 👤
 
 Eduardo Bueno
 
 ---
 
-Para mais informações e para acompanhar as atualizações, siga o repositório no GitHub.
+For more information and to keep up with updates, follow the repository on GitHub.
