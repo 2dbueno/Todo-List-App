@@ -1,19 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import Todo, CustomUser
 from django.contrib.auth.models import User
-
+from django.core.exceptions import ValidationError
+from .models import Todo
 
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
         fields = ["title", "deadline"]
-
-
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.core.exceptions import ValidationError
-from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField()
@@ -57,9 +51,10 @@ class CustomUserCreationForm(UserCreationForm):
         if not any(char in special_characters for char in password):
             errors.append("A senha deve conter pelo menos um caractere especial.")
 
+        #Add parametro "code" como identificador adicional de erro
         if errors:
-            raise ValidationError(errors)
+            raise ValidationError(errors, code='password_strength')
 
-
+# Definindo campo de senha 
 class CustomAuthenticationForm(AuthenticationForm):
-    pass
+    password = forms.CharField(widget=forms.PasswordInput)
