@@ -1,53 +1,52 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de tarefas</title>
+    <title>Gerenciador de Tarefas</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
-<body class="main-bg">
-    <nav>
-        <a class="navbar-brand">Lista de Tarefas</a>
-        <ul>
-            {% if user.is_authenticated %}
-            <li>
-                <form action="{% url 'logout' %}" method="post" class="d-flex">
-                    {% csrf_token %}
-                    <button type="button" class="logout-button">Logout</button>
-                </form>
-            </li>
-            {% else %}
-            <li><a href="{% url 'login_user' %}">Login</a></li>
-            <li><a href="{% url 'register_user' %}">Cadastro</a></li>
-            {% endif %}
-            <li><a href="{% url 'todo_list' %}">Tarefas</a></li>
-        </ul>
-    </nav>
-    
-    <div class="main-content container">
-        <section class="section task-list">
-            <div class="task-item">
-                <div class="intro-text-content">
-                    <h2>Bem-vindo ao nosso Gerenciador de Tarefas!</h2>
-                    <p>Aqui você pode organizar suas tarefas diárias de forma simples e eficiente. Nunca mais se esqueça de uma tarefa importante!</p>
-                    <p>Adicione novas tarefas, atualize seus detalhes e marque como concluídas com facilidade.</p>
-                </div>
-            </div>
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header>
+        <nav>
+            <a class="navbar-brand">Lista de Tarefas</a>
+            <ul>
+                <li><a href="{% url 'todo_list' %}">Tarefas</a></li>
+                {% if user.is_authenticated %}
+                <li>
+                    <form action="{% url 'logout' %}" method="post" class="d-flex">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-button">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li><a href="{% url 'login_user' %}">Login</a></li>
+                <li><a href="{% url 'register_user' %}">Cadastro</a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+        <section class="intro-section">
+            <h2>Bem-vindo ao Gerenciador de Tarefas!</h2>
+            <p>Organize suas tarefas diárias de forma simples e eficiente. Nunca mais esqueça de uma tarefa importante!</p>
+            <a href="{% url 'todo_list' %}" class="btn-primary">Veja suas tarefas</a>
         </section>
-    </div>
-    
-    <!-- Modal de Confirmação de saída -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <h2>Você tem certeza?</h2>
-            <p>Deseja realmente sair?</p>
-            <button id="confirmBtn">Sim</button>
-            <button id="cancelBtn">Não</button>
+        
+        <!-- Modal de Confirmação -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <h2>Deseja realmente sair?</h2>
+                <button id="confirmBtn">Sim</button>
+                <button id="cancelBtn">Não</button>
+            </div>
         </div>
-    </div>
+    </main>
 
     <!-- Inclusão do JavaScript -->
     <script src="{% static 'js/home.js' %}"></script>
