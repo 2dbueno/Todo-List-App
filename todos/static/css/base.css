@@ -1,4 +1,3 @@
-/* Reset e estilo base */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,6 @@ body {
     line-height: 1.6;
 }
 
-/* Variáveis para cores principais */
 :root {
     --primary-color: #7289da;
     --hover-color: #31ff31;
@@ -22,7 +20,6 @@ body {
     --link-color: #F3F5F7;
 }
 
-/* Navbar */
 .navbar {
     background-color: var(--primary-color);
     padding: 1rem;
@@ -58,7 +55,6 @@ body {
     left: 0;
 }
 
-/* Navbar links à direita */
 .navbar .navbar-right {
     display: flex;
     align-items: center;
@@ -83,33 +79,48 @@ body {
     color: var(--hover-color);
 }
 
-/* Botão de logout */
+.nav-links li {
+    display: flex;
+    height: 40px;
+}
+
 .logout-button {
-    background: none; /* Remover o fundo */
-    color: var(--primary-color);
-    padding: 8px 12px; /* Ajustar padding */
-    border: 2px solid var(--primary-color); /* Bordas */
-    border-radius: 5px;
+    background: linear-gradient(145deg, #6780da, #2d3338);
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: 2px solid #7289da;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
-.logout-button:hover {
-    background-color: var(--primary-color); /* Fundo ao passar o mouse */
-    color: #fff; /* Mudar a cor do texto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+.logout-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    z-index: -1;
 }
 
+.logout-button:hover::before {
+    left: 100%;
+}
 
-/* Container principal */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Botão de Confirmação Padrão */
 .btn-confirmar {
     background-color: #0aac25;
     color: #fff;
@@ -124,22 +135,19 @@ body {
 
 .btn-confirmar:hover {
     background-color: #08981e;
-    /* transform: scale(0.5); */
 }
 
 .btn-confirmar:active {
     background-color: #067a18;
-    /* transform: scale(0.98); */
 }
 
 .btn-position {
     position: absolute;
     top: 10rem;
-    right: 25rem; /* Distância da borda direita */
-    transform: translateY(-50%); /* Centraliza verticalmente */
+    right: 25rem;
+    transform: translateY(-50%);
 }
 
-/* Main content */
 main {
     padding: 1rem;
     background-color: var(--secondary-bg-color);
