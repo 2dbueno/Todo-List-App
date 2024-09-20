@@ -7,7 +7,7 @@ from .models import Todo
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
-        fields = ["title", "deadline"]
+        fields = ["title", "deadline", "priority"]
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField()

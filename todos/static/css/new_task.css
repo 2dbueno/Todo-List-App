@@ -46,7 +46,8 @@ body {
 
 /* Estilo dos campos do formulário */
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+select {
     padding: 12px;
     border: 2px solid #7289da;
     border-radius: 5px;
@@ -55,9 +56,17 @@ input[type="date"] {
 }
 
 input[type="text"]:focus,
-input[type="date"]:focus {
+input[type="date"]:focus,
+select:focus {
     border-color: #0aac25;
     outline: none;
+}
+
+/* Estilo para o campo de prioridade */
+.select-priority {
+    appearance: none; /* Remove o estilo padrão do seletor */
+    background-color: #282b30;
+    color: #FFF;
 }
 
 /* Animação de fade in */

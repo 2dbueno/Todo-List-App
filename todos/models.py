@@ -4,6 +4,12 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model
 
 class Todo(models.Model):
+    PRIORITY_CHOICES = [
+        ('low', 'Baixa'),
+        ('medium', 'Média'),
+        ('high', 'Alta'),
+    ]
+
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(
         verbose_name="Título", max_length=100, null=False, blank=False
@@ -11,6 +17,11 @@ class Todo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
     deadline = models.DateField(verbose_name="Data de entrega", null=False, blank=False)
     finished_at = models.DateField(null=True)
+    priority = models.CharField(
+        max_length=6,
+        choices=PRIORITY_CHOICES,
+        default='medium',  # Prioridade padrão
+    )
 
     class Meta:
         ordering = ["deadline"]

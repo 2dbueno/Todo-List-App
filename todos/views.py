@@ -39,24 +39,20 @@ class TodoCreateView(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-
 class TodoUpdateView(UpdateView):
     model = Todo
-    fields = ["title", "deadline"]
+    fields = ["title", "deadline", "priority"]
     success_url = reverse_lazy("todo_list")
-
 
 class TodoDeleteView(DeleteView):
     model = Todo
     success_url = reverse_lazy("todo_list")
-
 
 class TodoCompleteView(View):
     def get(self, request, pk):
         todo = get_object_or_404(Todo, pk=pk)
         todo.mark_has_complete()
         return redirect("todo_list")
-
 
 class RegisterUserView(View):
     template_name = "registration/register_user.html"
@@ -76,7 +72,6 @@ class RegisterUserView(View):
             return redirect(reverse("todo_list"))
 
         return render(request, self.template_name, {"form": form})
-
 
 class LoginView(View):
     template_name = "registration/login_user.html"
