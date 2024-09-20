@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth import get_user_model
 
-
 class Todo(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(
@@ -20,7 +19,6 @@ class Todo(models.Model):
         if not self.finished_at:
             self.finished_at = date.today()
             self.save()
-
 
 class CustomUser(AbstractUser):
     groups = models.ManyToManyField("auth.Group", related_name="custom_users_groups")
