@@ -1,54 +1,50 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Tarefas</title>
+
+{% block page_title %}Home - Gerenciador de Tarefas{% endblock %}
+
+{% block navbar_title %}Home{% endblock %}
+
+{% block navbar_right %}
+    <ul class="nav-links">
+        <li><a href="{% url 'todo_list' %}">Tarefas</a></li>
+        {% if user.is_authenticated %}
+        <li>
+            <form action="{% url 'logout' %}" method="post" class="d-flex">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </li>
+        {% else %}
+        <li><a href="{% url 'login_user' %}">Login</a></li>
+        <li><a href="{% url 'register_user' %}">Cadastro</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-</head>
-<body>
-    <!-- Cabeçalho com navegação -->
-    <header>
-        <nav>
-            <a class="navbar-brand">Lista de Tarefas</a>
-            <ul>
-                <li><a href="{% url 'todo_list' %}">Tarefas</a></li>
-                {% if user.is_authenticated %}
-                <li>
-                    <form action="{% url 'logout' %}" method="post" class="d-flex">
-                        {% csrf_token %}
-                        <button type="submit" class="logout-button">Logout</button>
-                    </form>
-                </li>
-                {% else %}
-                <li><a href="{% url 'login_user' %}">Login</a></li>
-                <li><a href="{% url 'register_user' %}">Cadastro</a></li>
-                {% endif %}
-                
-            </ul>
-        </nav>
-    </header>
+{% endblock %}
 
+{% block content %}
     <!-- Conteúdo principal -->
-    <main class="container">
-        <section class="intro-section">
-            <h2>Bem-vindo ao Gerenciador de Tarefas!</h2>
-            <p>Organize suas tarefas diárias de forma simples e eficiente. Nunca mais esqueça de uma tarefa importante!</p>
-            <a href="{% url 'todo_list' %}" class="btn-primary">Veja suas tarefas</a>
-        </section>
+    <section class="intro-section">
+        <h2>Bem-vindo ao Gerenciador de Tarefas!</h2>
+        <p>Organize suas tarefas diárias de forma simples e eficiente. Nunca mais esqueça de uma tarefa importante!</p>
+        <a href="{% url 'todo_list' %}" class="btn-primary">Veja suas tarefas</a>
+    </section>
         
-        <!-- Modal de Confirmação -->
-        <div id="confirmationModal" class="modal">
-            <div class="modal-content">
-                <h2>Deseja realmente sair?</h2>
-                <button id="confirmBtn">Sim</button>
-                <button id="cancelBtn">Não</button>
-            </div>
+    <!-- Modal de Confirmação -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2>Deseja realmente sair?</h2>
+            <button id="confirmBtn">Sim</button>
+            <button id="cancelBtn">Não</button>
         </div>
-    </main>
+    </div>
+{% endblock %}
 
-    <!-- Inclusão do JavaScript -->
+{% block extra_js %}
     <script src="{% static 'js/home.js' %}"></script>
-</body>
-</html>
+{% endblock %}
