@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block page_title %}
   Lista de tarefas
 {% endblock page_title %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/todo_list.css' %}">
+{% endblock %}
 
 {% block content %}
 <h1>Lista de tarefas</h1>
@@ -13,7 +19,7 @@
                 <th scope="col">Criado em</th>
                 <th scope="col">Entregar em</th>
                 <th scope="col">Prioridade</th>
-                <th scope="col">Finalizar em</th>
+                <th scope="col">Finalizada em</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>

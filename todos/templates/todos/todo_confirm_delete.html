@@ -1,19 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page_title %}
     Excluir Tarefa
 {% endblock page_title %}
 
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/todo_delete.css' %}">
+{% endblock extra_css %}
+
 {% block content %}
     <h1>Excluir Tarefa?</h1>
-
-    <p>Tem certeza que deseja excluir a tarefa <strong>{{todo.title}}</strong>?</p>
-
+    <p>Tem certeza que deseja excluir a tarefa <strong>{{ todo.title }}</strong>?</p>
     <form method="POST">
-
-{% csrf_token %}
-        <button type="subimit" class="btn btn-danger">Excluir</button>
-        <a href=" {% url "todo_list" %} "class="btn btn-primary">Cancelar</a>
-
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="{% url 'todo_list' %}" class="btn btn-primary">Cancelar</a>
     </form>
 {% endblock content %}

@@ -1,0 +1,98 @@
+/* Reset e estilo base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282b30;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* Estilo da tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: #3a3f44;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #4a4e54;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+}
+
+.table th {
+    color: #FFFFFF;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #34383e;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #FFFFFF;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-position {
+    display: inline-block;
+    margin: 20px 0;
+    background-color: #28a745;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-position:hover {
+    background-color: #218838;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #FFFFFF;
+}
